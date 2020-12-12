@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Botones Agregar</title>   
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section th:fragment="botonesAgregar" class="py-3 mb-3 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <A href="#" class="btn btn-primary btn-block"
+                           data-toggle="modal" data-target="#agregarCliente">
+                            <i class="fas fa-plus"></i> [[#{accion.agregar}]]
+                        </A>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
